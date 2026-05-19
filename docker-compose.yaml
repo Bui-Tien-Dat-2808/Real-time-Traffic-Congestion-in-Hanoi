@@ -85,7 +85,10 @@ services:
       "
 
   spark-master:
-    image: apache/spark:3.5.0
+    build:
+      context: .
+      dockerfile: docker/spark/Dockerfile
+    image: traffic-spark:3.5.0
     container_name: spark-master
     command: /opt/spark/bin/spark-class org.apache.spark.deploy.master.Master
     ports:
@@ -97,7 +100,7 @@ services:
       - ./:/app
 
   spark-worker:
-    image: apache/spark:3.5.0
+    image: traffic-spark:3.5.0
     depends_on:
       - spark-master
       - minio-init

@@ -1,1 +1,0 @@
-MinIO stores raw traffic incident snapshots under the `traffic-raw` bucket.

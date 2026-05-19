@@ -15,6 +15,7 @@ class Config:
     KAFKA_INTERNAL_BROKER = os.getenv("KAFKA_INTERNAL_BROKER", "kafka:9092")
     KAFKA_TOPIC = os.getenv("KAFKA_TOPIC", "hanoi-incidents")
     KAFKA_STARTING_OFFSETS = os.getenv("KAFKA_STARTING_OFFSETS", "earliest")
+    KAFKA_FAIL_ON_DATA_LOSS = os.getenv("KAFKA_FAIL_ON_DATA_LOSS", "false")
 
     TOMTOM_API_KEY = os.getenv("TOMTOM_API_KEY")
 

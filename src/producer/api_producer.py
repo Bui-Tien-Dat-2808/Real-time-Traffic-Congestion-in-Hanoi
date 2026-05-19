@@ -1,7 +1,8 @@
-from pathlib import Path
 import sys
 import time
 import json
+from datetime import datetime, timezone
+from pathlib import Path
 import requests
 from kafka import KafkaProducer
 
@@ -52,6 +53,7 @@ def normalize_incident(properties):
         "from": properties.get("from"),
         "to": properties.get("to"),
         "events": description,
+        "fetched_at": datetime.now(timezone.utc).isoformat(),
     }
 
 def main():
